@@ -7,6 +7,9 @@
         <title>Listado Usuarios</title>
     </head>
     <body>
+        <a href="${pageContext.request.contextPath}/usuario/new">Nuevo Usuario</a><br>
+                            
+        <br>
         <c:if test="${not empty usuarios}">
             <table border="1px" cellpadding="1" cellspacing="1">  
                 <thead>  
@@ -26,7 +29,9 @@
                         <td>${usuario.apepat}</td>  
                         <td>${usuario.apemat}</td>  
                         <td>  
-                            Por definir
+                            <a href="${pageContext.request.contextPath}/usuario/edit/${usuario.usuario_id}">Edit</a><br>
+                            <a href="${pageContext.request.contextPath}/usuario/delete/${usuario.usuario_id}.html">Delete</a><br>
+                            <a href="${pageContext.request.contextPath}/usuario/datail/${usuario.usuario_id}.html">View</a><br>
                         </td>  
                     </tr>  
                     </c:forEach>
