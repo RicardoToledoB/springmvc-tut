@@ -30,11 +30,11 @@ public class UsuarioDAOImpl implements UsuarioDAO{
     }
 
     @Override
-    public List<Usuario> search(Usuario u) {
-        List<Usuario> list = new ArrayList<Usuario>();
+    public Usuario search(Usuario u) {
+        Usuario list = new Usuario();
         SqlSession session = new MyBatisUtil().getSession();
         try {
-            list = session.selectList("Usuario.search",u);
+            list = session.selectOne("Usuario.search", u);
         } finally {
             session.close();
         }

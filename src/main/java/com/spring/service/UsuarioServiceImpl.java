@@ -24,7 +24,7 @@ public class UsuarioServiceImpl implements UsuarioService{
         return usuarioDAO.list();
     }
     @Override
-    public List<Usuario> search(Usuario u) {
+    public Usuario search(Usuario u) {
         return usuarioDAO.search(u);
     }
     @Override

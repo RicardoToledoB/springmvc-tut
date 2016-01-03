@@ -8,7 +8,7 @@
         <title>Editar Usuario</title>
     </head>
     <body>
-        <form:form method="POST" commandName="usuario" action="${pageContext.request.contextPath}/usuario/edit/${usuario_id}">  
+        <form:form method="POST" commandName="usuario" action="${pageContext.request.contextPath}/usuario/edit/${id}">
             <table>  
                 <tbody>  
                     <tr>  

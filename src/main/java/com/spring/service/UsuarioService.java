@@ -17,7 +17,7 @@ public interface UsuarioService {
     public void setUsuariosDAO(UsuarioDAO usuarioDAO);
     public void save(Usuario u);
     public List<Usuario> list();
-    public List<Usuario> search(Usuario u);
+    public Usuario search(Usuario u);
     public void delete(Usuario u);
     public void edit(Usuario u);
 }

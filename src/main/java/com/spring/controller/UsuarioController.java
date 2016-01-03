@@ -48,16 +48,20 @@ public class UsuarioController {
         ModelAndView modelAndView = new ModelAndView("usuario/edit");
         Usuario u=new Usuario();
         u.setUsuario_id(id);
-        //Usuario user = usuarioService.edit(u);
-        modelAndView.addObject("usuario",u);
+        Usuario user = usuarioService.search(u);
+        modelAndView.addObject("usuario",user);
         return modelAndView;
     }
      
     @RequestMapping(value="/usuario/edit/{id}", method=RequestMethod.POST)
-    public ModelAndView edit(@ModelAttribute Usuario user, @PathVariable int id) {
-         
-        ModelAndView modelAndView = new ModelAndView("usuario/home");
-        usuarioService.edit(user);
+    public ModelAndView edit(@ModelAttribute Usuario usuario,@PathVariable int id) {
+         Usuario u=new Usuario();
+         u.setUsuario_id(id);
+         u.setNombre(usuario.getNombre());
+         u.setApepat(usuario.getApepat());
+         u.setApemat(usuario.getApemat());
+         ModelAndView modelAndView = new ModelAndView("usuario/home");
+         usuarioService.edit(u);
         return modelAndView;
     }
     
