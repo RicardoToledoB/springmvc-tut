@@ -65,5 +65,12 @@ public class UsuarioController {
         return modelAndView;
     }
     
-    
+    @RequestMapping(value="/usuario/delete/{id}",method=RequestMethod.GET)
+    public ModelAndView delete(@PathVariable int id){
+        Usuario u=new Usuario();
+        u.setUsuario_id(id);
+        ModelAndView modelAndView=new ModelAndView("/usuario/home");
+        usuarioService.delete(u);
+        return modelAndView;
+    }
 }

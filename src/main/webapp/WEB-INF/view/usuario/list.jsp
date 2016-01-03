@@ -30,7 +30,7 @@
                         <td>${usuario.apemat}</td>  
                         <td>  
                             <a href="${pageContext.request.contextPath}/usuario/edit/${usuario.usuario_id}">Edit</a><br>
-                            <a href="${pageContext.request.contextPath}/usuario/delete/${usuario.usuario_id}.html">Delete</a><br>
+                            <a href="${pageContext.request.contextPath}/usuario/delete/${usuario.usuario_id}">Delete</a><br>
                             <a href="${pageContext.request.contextPath}/usuario/datail/${usuario.usuario_id}.html">View</a><br>
                         </td>  
                     </tr>  
