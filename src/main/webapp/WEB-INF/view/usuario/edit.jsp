@@ -45,31 +45,24 @@
         <br>
         <h1>Editar Usuario</h1>
         <br>
+       
         <form:form method="POST" commandName="usuario" action="${pageContext.request.contextPath}/usuario/edit/${id}">
-            <table>  
-                <tbody>  
-                    <tr>  
-                        <td>nombre:</td>  
-                        <td><form:input path="nombre"></form:input></td>  
-                    </tr>  
-                    <tr>  
-                        <td>apepat:</td>  
-                        <td><form:input path="apepat"></form:input></td>  
-                    </tr> 
-                    <tr>  
-                        <td>apemat:</td>  
-                        <td><form:input path="apemat"></form:input></td>  
-                    </tr>  
-
-
-                        <tr>  
-                            <td><input type="submit" value="Edit"></td>  
-                            <td></td>  
-                        </tr>  
-                    </tbody>  
-                </table>  
-        </form:form>
-
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <form:input path="nombre" class="form-control" id="nombre" placeholder="nombre" />
+                    
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Apellido Paterno</label>
+                    <form:input path="apepat" class="form-control" id="apepat" placeholder="Apellido Paterno" />
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Apellido Materno</label>
+                    <form:input path="apemat" class="form-control" id="apemat" placeholder="Apellido Materno" />
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form:form>
     </div><!-- /.container -->
 
 
