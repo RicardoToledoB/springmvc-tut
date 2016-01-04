@@ -22,7 +22,7 @@ public class UsuarioController {
     //LISTADO DE USUARIOS
     @RequestMapping(value="/usuario/list")
     public ModelAndView list() {
-        ModelAndView modelAndView = new ModelAndView("usuario/list");
+        ModelAndView modelAndView = new ModelAndView("/usuario/list");
         List<Usuario> usuarios = usuarioService.list();
         modelAndView.addObject("usuarios", usuarios);
         return modelAndView;
@@ -30,7 +30,7 @@ public class UsuarioController {
     //new.jsp
     @RequestMapping(value="/usuario/new")
     public ModelAndView newPage() {
-        ModelAndView modelAndView = new ModelAndView("usuario/new");
+        ModelAndView modelAndView = new ModelAndView("/usuario/new");
         modelAndView.addObject("usuario", new Usuario());
         return modelAndView;
     }
@@ -38,14 +38,14 @@ public class UsuarioController {
     //GUARDAR USUARIO
     @RequestMapping(value="/usuario/save")
     public ModelAndView save(@ModelAttribute Usuario usuario) {
-        ModelAndView modelAndView = new ModelAndView("usuario/home");
+        ModelAndView modelAndView = new ModelAndView("/usuario/home");
         usuarioService.save(usuario);
         return modelAndView;
     }
     
     @RequestMapping(value="/usuario/edit/{id}", method=RequestMethod.GET)
     public ModelAndView editPage(@PathVariable int id) {
-        ModelAndView modelAndView = new ModelAndView("usuario/edit");
+        ModelAndView modelAndView = new ModelAndView("/usuario/edit");
         Usuario u=new Usuario();
         u.setUsuario_id(id);
         Usuario user = usuarioService.search(u);
@@ -60,7 +60,7 @@ public class UsuarioController {
          u.setNombre(usuario.getNombre());
          u.setApepat(usuario.getApepat());
          u.setApemat(usuario.getApemat());
-         ModelAndView modelAndView = new ModelAndView("usuario/home");
+         ModelAndView modelAndView = new ModelAndView("/usuario/home");
          usuarioService.edit(u);
         return modelAndView;
     }
@@ -71,6 +71,13 @@ public class UsuarioController {
         u.setUsuario_id(id);
         ModelAndView modelAndView=new ModelAndView("/usuario/home");
         usuarioService.delete(u);
+        return modelAndView;
+    }
+    
+    @RequestMapping(value="/usuario/detail/{id}",method=RequestMethod.GET)
+    public ModelAndView detailPage(@PathVariable int id) {
+        System.out.println("Detalle ID:"+id);
+        ModelAndView modelAndView = new ModelAndView("/usuario/detail");
         return modelAndView;
     }
 }

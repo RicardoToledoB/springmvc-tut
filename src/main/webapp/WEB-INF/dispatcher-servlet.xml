@@ -22,7 +22,9 @@
         <property name="suffix">  
             <value>.jsp</value>  
         </property>  
-    </bean>  
+    </bean> 
+  
+         
     
    <mvc:annotation-driven />
    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />

@@ -1,8 +1,4 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,43 +39,6 @@
     </nav>
 
     <div class="container">
-        <div class="row">
-            <br>
-        <h1>Listado Usuarios</h1>
-        <br>
-        <a href="${pageContext.request.contextPath}/usuario/new" class="btn btn-primary">Nuevo Usuario</a><br>
-                            
-        <br>
-        <c:if test="${not empty usuarios}">
-            <table  class="table table-striped table-bordered table-hover">  
-                <thead>  
-                    <tr>  
-                        <th>#</th>
-                        <th>nombre</th>
-                        <th>apepat</th>
-                        <th>apemat</th>
-                        <th>acciones</th>  
-                    </tr>  
-                </thead>  
-                <tbody>  
-                    <c:forEach var="usuario" items="${usuarios}">
-                    <tr>  
-                        <td>${usuario.usuario_id}</td>  
-                        <td>${usuario.nombre}</td>  
-                        <td>${usuario.apepat}</td>  
-                        <td>${usuario.apemat}</td>  
-                        <td>  
-                            <a href="${pageContext.request.contextPath}/usuario/edit/${usuario.usuario_id}">Edit</a> /
-                            <a href="${pageContext.request.contextPath}/usuario/delete/${usuario.usuario_id}">Delete</a> /
-                            <a href="${pageContext.request.contextPath}/usuario/datail/${usuario.usuario_id}">View</a>
-                        </td>  
-                    </tr>  
-                    </c:forEach>
-                </tbody>  
-            </table>  
-        </c:if>
-            
-        </div>
         
 
     </div><!-- /.container -->

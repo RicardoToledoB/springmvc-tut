@@ -13,4 +13,8 @@ public class UrlsController {
     public ModelAndView homePage() {
         return new ModelAndView("usuario/home");
     }
+    @RequestMapping(value="/usuario/hola")
+    public ModelAndView testPage() {
+        return new ModelAndView("usuario/hola");
+    }
 }
