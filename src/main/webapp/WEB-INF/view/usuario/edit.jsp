@@ -45,7 +45,9 @@
         <br>
         <h1>Editar Usuario</h1>
         <br>
-       
+        <a href="${pageContext.request.contextPath}/usuario/">Volver</a>
+        <br>
+        
         <form:form method="POST" commandName="usuario" action="${pageContext.request.contextPath}/usuario/edit/${id}">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>

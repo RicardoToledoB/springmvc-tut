@@ -77,7 +77,11 @@ public class UsuarioController {
     @RequestMapping(value="/usuario/detail/{id}",method=RequestMethod.GET)
     public ModelAndView detailPage(@PathVariable int id) {
         System.out.println("Detalle ID:"+id);
+        Usuario u=new Usuario();
+        u.setUsuario_id(id);
         ModelAndView modelAndView = new ModelAndView("/usuario/detail");
+        Usuario user = usuarioService.search(u);
+        modelAndView.addObject("usuario",user);
         return modelAndView;
     }
 }
