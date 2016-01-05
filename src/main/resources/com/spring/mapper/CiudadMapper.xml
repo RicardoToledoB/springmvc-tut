@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Ciudad">
+    
+    <!-- LIST ALL USERS -->
+    <select id="list" resultType="Ciudad" >
+        select * from Ciudades 
+    </select>
+    <!--GUARDAR USUARIO -->
+    <insert id="save">
+	    insert into Ciudades(nombre,estado)
+            values (
+	    	#{nombre}, #{estado}
+	    )
+    </insert>
+    <!-- ELIMINAR USUARIO -->
+    <delete id="delete">
+        delete from Ciudades where ciudad_id=#{ciudad_id}
+    </delete>
+    
+    <!-- BUSCAR USUARIO -->
+     <select id="search" resultType="Ciudad" >
+        select * from Ciudades where ciudad_id=#{ciudad_id}
+    </select>
+    <!-- ACTUALIZAR USUARIO -->
+    <update id="edit">
+        update Ciudades set nombre=#{nombre},estado=#{estado} where ciudad_id=#{ciudad_id}
+    </update>
+    
+</mapper>

@@ -14,16 +14,58 @@ public class Usuario {
     private String nombre;
     private String apepat;
     private String apemat;
-
+    private String username;
+    private String password;
+    private int ciudad_id;
+    private String estado;
+    
     public Usuario() {
     }
 
-    public Usuario(int usuario_id, String nombre, String apepat, String apemat) {
+    public Usuario(int usuario_id, String nombre, String apepat, String apemat, String username, String password, int ciudad_id, String estado) {
         this.usuario_id = usuario_id;
         this.nombre = nombre;
         this.apepat = apepat;
         this.apemat = apemat;
+        this.username = username;
+        this.password = password;
+        this.ciudad_id = ciudad_id;
+        this.estado = estado;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getCiudad_id() {
+        return ciudad_id;
+    }
+
+    public void setCiudad_id(int ciudad_id) {
+        this.ciudad_id = ciudad_id;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    
 
     public int getUsuario_id() {
         return usuario_id;

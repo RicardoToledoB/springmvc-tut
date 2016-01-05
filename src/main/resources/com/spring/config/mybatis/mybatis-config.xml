@@ -23,6 +23,7 @@ PUBLIC "-//mybatis.org//DTD 3.0//EN"
    
     <mappers>
         <mapper resource="com/spring/mapper/UsuarioMapper.xml"/>
+        <mapper resource="com/spring/mapper/CiudadMapper.xml"/>
       
     </mappers>
 </configuration>

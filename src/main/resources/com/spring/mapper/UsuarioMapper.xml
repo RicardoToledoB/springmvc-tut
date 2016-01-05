@@ -10,9 +10,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
     <!--GUARDAR USUARIO -->
     <insert id="save">
-	    insert into Usuarios(nombre,apepat,apemat)
+	    insert into Usuarios(nombre,apepat,apemat,username,password,ciudad_id,estado)
             values (
-	    	#{nombre}, #{apepat}, #{apemat}
+	    	#{nombre}, #{apepat}, #{apemat},#{username},#{password},#{ciudad_id},#{estado}
 	    )
     </insert>
     <!-- ELIMINAR USUARIO -->
@@ -26,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
     <!-- ACTUALIZAR USUARIO -->
     <update id="edit">
-        update Usuarios set nombre=#{nombre},apepat=#{apepat},apemat=#{apemat} where usuario_id=#{usuario_id}
+        update Usuarios set nombre=#{nombre},apepat=#{apepat},apemat=#{apemat},username=#{username},password=#{password},#{estado} where usuario_id=#{usuario_id}
     </update>
     
 </mapper>

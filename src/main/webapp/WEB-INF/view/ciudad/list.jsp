@@ -1,6 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -19,7 +18,6 @@
         <spring:url value="/resources/css/starter.css" var="starterCSS" />
         <link href="${starterCSS}" rel="stylesheet"> 
 
-
     </head>
 
     <body>
@@ -37,9 +35,9 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                         <li ><a href="${pageContext.request.contextPath}/">Home</a></li>
-                        <li class="active"> <a href="${pageContext.request.contextPath}/usuario">Usuario</a></li>
-                        <li><a href="${pageContext.request.contextPath}/ciudad">Ciudad</a></li>
+                        <li ><a href="${pageContext.request.contextPath}/">Home</a></li>
+                        <li > <a href="${pageContext.request.contextPath}/usuario">Usuario</a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/ciudad">Ciudad</a></li>
 
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -47,17 +45,44 @@
         </nav>
 
         <div class="container">
-
             <div class="row">
                 <br>
                 <spring:url value="/resources/img/logoSpring.png" var="logo"/>
-                <h3><img src="${logo}"/> Mantenedor Usuarios</h3>
+                <h3><img src="${logo}"/> Listado Ciudades</h3>
                 <br>
-                <a href="${pageContext.request.contextPath}/usuario/new">Nuevo Usuario</a><br>
-                <a href="${pageContext.request.contextPath}/usuario/list">Listado Usuarios</a>
+                <a href="${pageContext.request.contextPath}/ciudad/new" class="btn btn-primary">Nueva Ciudad</a><br>
+
+                <br>
+                <c:if test="${not empty ciudad}">
+                    <table  class="table table-striped table-bordered table-hover">  
+                        <thead>  
+                            <tr>  
+                                <th>#</th>
+                                <th>nombre</th>
+                                <th>estado</th>
+
+                                <th>acciones</th>  
+                            </tr>  
+                        </thead>  
+                        <tbody>  
+                            <c:forEach var="ciudad" items="${ciudad}">
+                                <tr>  
+                                    <td>${ciudad.ciudad_id}</td>  
+                                    <td>${ciudad.nombre}</td>  
+                                    <td>${ciudad.estado}</td>  
+
+                                    <td>  
+                                        <a href="${pageContext.request.contextPath}/ciudad/edit/${ciudad.ciudad_id}">Edit</a> /
+                                        <a href="${pageContext.request.contextPath}/ciudad/delete/${ciudad.ciudad_id}">Delete</a> /
+                                        <a href="${pageContext.request.contextPath}/ciudad/detail/${ciudad.ciudad_id}">View</a>
+                                    </td>  
+                                </tr>  
+                            </c:forEach>
+                        </tbody>  
+                    </table>  
+                </c:if>
 
             </div>
-
 
 
         </div><!-- /.container -->
@@ -71,3 +96,4 @@
         <script src="${bootstrapJS}"></script>
     </body>
 </html>
+

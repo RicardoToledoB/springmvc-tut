@@ -3,7 +3,6 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,7 +17,6 @@
         <link href="${bootstrapCSS}" rel="stylesheet">
         <spring:url value="/resources/css/starter.css" var="starterCSS" />
         <link href="${starterCSS}" rel="stylesheet"> 
-
 
     </head>
 
@@ -37,9 +35,9 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                         <li ><a href="${pageContext.request.contextPath}/">Home</a></li>
-                        <li class="active"> <a href="${pageContext.request.contextPath}/usuario">Usuario</a></li>
-                        <li><a href="${pageContext.request.contextPath}/ciudad">Ciudad</a></li>
+                        <li ><a href="${pageContext.request.contextPath}/">Home</a></li>
+                        <li > <a href="${pageContext.request.contextPath}/usuario">Usuario</a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/ciudad">Ciudad</a></li>
 
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -47,17 +45,33 @@
         </nav>
 
         <div class="container">
+            <br>
+            <spring:url value="/resources/img/logoSpring.png" var="logo"/>
+            <h3><img src="${logo}"/> Nueva Ciudad</h3>
+            <br>
+            <a href="${pageContext.request.contextPath}/ciudad/">Volver</a><br>
 
-            <div class="row">
-                <br>
-                <spring:url value="/resources/img/logoSpring.png" var="logo"/>
-                <h3><img src="${logo}"/> Mantenedor Usuarios</h3>
-                <br>
-                <a href="${pageContext.request.contextPath}/usuario/new">Nuevo Usuario</a><br>
-                <a href="${pageContext.request.contextPath}/usuario/list">Listado Usuarios</a>
+            <br>
 
-            </div>
+            <form:form method="POST" commandName="ciudad" action="${pageContext.request.contextPath}/ciudad/save">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <form:input path="nombre" class="form-control" id="nombre" placeholder="nombre" />
+                    
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <form:input path="estado" class="form-control" id="estado" placeholder="Estado" />
+                </div>
+                
+                
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form:form>
 
+             
+
+
+           
 
 
         </div><!-- /.container -->

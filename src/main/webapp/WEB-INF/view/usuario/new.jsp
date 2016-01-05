@@ -1,6 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -35,7 +36,9 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li ><a href="${pageContext.request.contextPath}/">Home</a></li>
+                        <li class="active"> <a href="${pageContext.request.contextPath}/usuario">Usuario</a></li>
+                        <li><a href="${pageContext.request.contextPath}/ciudad">Ciudad</a></li>
 
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -44,7 +47,8 @@
 
         <div class="container">
             <br>
-            <h1>Nuevo usuario</h1>
+            <spring:url value="/resources/img/logoSpring.png" var="logo"/>
+            <h3><img src="${logo}"/> Nuevo usuario</h3>
             <br>
             <a href="${pageContext.request.contextPath}/usuario/">Volver</a><br>
 
@@ -54,7 +58,7 @@
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <form:input path="nombre" class="form-control" id="nombre" placeholder="nombre" />
-                    
+
                 </div>
                 <div class="form-group">
                     <label for="nombre">Apellido Paterno</label>
@@ -64,14 +68,35 @@
                     <label for="nombre">Apellido Materno</label>
                     <form:input path="apemat" class="form-control" id="apemat" placeholder="Apellido Materno" />
                 </div>
-                
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <form:input path="username" class="form-control" id="username" placeholder="Usuario" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Clave</label>
+                    <form:input path="password" class="form-control" id="password" placeholder="Clave" />
+                </div>
+                <div class="form-group">
+                    <label for="ciudad_id">Ciudad ID</label>
+                    <form:select path="ciudad_id" class="form-control">
+                        <form:option value="-1">-- Seleccionar Ciudad --</form:option>
+                        <form:options items="${ciudadList}" itemLabel="nombre" itemValue="ciudad_id" />
+                    </form:select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <form:input path="estado" class="form-control" id="estado" placeholder="Estado" />
+                </div>
+
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </form:form>
 
-             
 
 
-           
+
+
 
 
         </div><!-- /.container -->

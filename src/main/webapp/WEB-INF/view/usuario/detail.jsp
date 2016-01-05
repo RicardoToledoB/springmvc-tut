@@ -37,7 +37,9 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
+                        <li ><a href="${pageContext.request.contextPath}/">Home</a></li>
+                        <li class="active"> <a href="${pageContext.request.contextPath}/usuario">Usuario</a></li>
+                        <li><a href="${pageContext.request.contextPath}/ciudad">Ciudad</a></li>
 
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -47,9 +49,11 @@
         <div class="container">
 
             <div class="row">
-                <h1>Detalle Usuario</h1>
                 <br>
-                
+                <spring:url value="/resources/img/logoSpring.png" var="logo"/>
+                <h3><img src="${logo}"/> Detalle Usuario</h3>
+                <br>
+
                 <a href="${pageContext.request.contextPath}/usuario/">Volver</a><br>
                 <br>
 
@@ -76,6 +80,30 @@
                         <label class="col-sm-2 control-label">ApeMat</label>
                         <div class="col-sm-10">
                             <p class="form-control-static">${usuario.apemat}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Usuario</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${usuario.username}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${usuario.password}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Ciudad ID</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${usuario.ciudad_id}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Estado</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${usuario.estado}</p>
                         </div>
                     </div>
 

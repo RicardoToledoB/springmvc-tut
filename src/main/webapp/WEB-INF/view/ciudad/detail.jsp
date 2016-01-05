@@ -37,9 +37,9 @@
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                         <li ><a href="${pageContext.request.contextPath}/">Home</a></li>
-                        <li class="active"> <a href="${pageContext.request.contextPath}/usuario">Usuario</a></li>
-                        <li><a href="${pageContext.request.contextPath}/ciudad">Ciudad</a></li>
+                        <li ><a href="${pageContext.request.contextPath}/">Home</a></li>
+                        <li > <a href="${pageContext.request.contextPath}/usuario">Usuario</a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/ciudad">Ciudad</a></li>
 
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -51,10 +51,34 @@
             <div class="row">
                 <br>
                 <spring:url value="/resources/img/logoSpring.png" var="logo"/>
-                <h3><img src="${logo}"/> Mantenedor Usuarios</h3>
+                <h3><img src="${logo}"/> Detalle Ciudad</h3>
                 <br>
-                <a href="${pageContext.request.contextPath}/usuario/new">Nuevo Usuario</a><br>
-                <a href="${pageContext.request.contextPath}/usuario/list">Listado Usuarios</a>
+                
+                <a href="${pageContext.request.contextPath}/ciudad/">Volver</a><br>
+                <br>
+
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Id</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${ciudad.ciudad_id}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${ciudad.nombre}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Estado</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">${ciudad.estado}</p>
+                        </div>
+                    </div>
+                    
+
+                </form>
 
             </div>
 

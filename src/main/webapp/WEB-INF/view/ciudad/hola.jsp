@@ -31,9 +31,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="${pageContext.request.contextPath}/">Home</a></li>
-            <li > <a href="${pageContext.request.contextPath}/usuario">Usuario</a></li>
-            <li><a href="${pageContext.request.contextPath}/ciudad">Ciudad</a></li>
+            <li class="active"><a href="#">Home</a></li>
             
           </ul>
         </div><!--/.nav-collapse -->
@@ -41,13 +39,7 @@
     </nav>
 
     <div class="container">
-        <br>
-        <spring:url value="/resources/img/logoSpring.png" var="logo"/>
-        <h3> <img src="${logo}" alt=""/> CRUD Test Spring MVC </h3>
-        <br>
         
-        <a href="${pageContext.request.contextPath}/usuario">Modulo Usuario</a><br>
-        <a href="${pageContext.request.contextPath}/ciudad">Modulo Ciudad</a>
 
     </div><!-- /.container -->
 
