@@ -75,9 +75,10 @@
                 </div>
                 <div class="form-group">
                     <label for="ciudad_nombre">Ciudad ID</label>
-                    <form:input path="ciudad_nombre" class="form-control" id="ciudad_nombre" />
-                    
-                    
+                    <form:select path="ciudad_id" class="form-control">
+                        <form:options items="${ciudad}" itemLabel="nombre" itemValue="ciudad_id"/>
+                    </form:select>
+
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>

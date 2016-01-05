@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
     <!-- ACTUALIZAR USUARIO -->
     <update id="edit">
-        update Usuarios set nombre=#{nombre},apepat=#{apepat},apemat=#{apemat},username=#{username},password=#{password},#{estado} where usuario_id=#{usuario_id}
+        update Usuarios set nombre=#{nombre},apepat=#{apepat},apemat=#{apemat},username=#{username},password=#{password},ciudad_id=${ciudad_id},estado=#{estado} where usuario_id=#{usuario_id}
     </update>
     
 </mapper>
