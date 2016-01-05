@@ -24,7 +24,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     
     <!-- BUSCAR USUARIO -->
      <select id="search" resultType="Usuario" >
-        select * from Usuarios where usuario_id=#{usuario_id}
+        select usuarios.usuario_id,usuarios.nombre,usuarios.apepat,usuarios.apemat,usuarios.username,usuarios.password,usuarios.ciudad_id,ciudades.nombre as ciudad_nombre,usuarios.estado
+         from Usuarios,Ciudades
+         where Usuarios.ciudad_id=Ciudades.ciudad_id and usuario_id=#{usuario_id}
     </select>
     <!-- ACTUALIZAR USUARIO -->
     <update id="edit">

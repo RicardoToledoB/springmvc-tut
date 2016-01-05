@@ -22,7 +22,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int usuario_id, String nombre, String apepat, String apemat, String username, String password, int ciudad_id, String estado) {
+    public Usuario(int usuario_id, String nombre, String apepat, String apemat, String username, String password, int ciudad_id, String estado,String ciudad_nombre) {
         this.usuario_id = usuario_id;
         this.nombre = nombre;
         this.apepat = apepat;
@@ -31,6 +31,7 @@ public class Usuario {
         this.password = password;
         this.ciudad_id = ciudad_id;
         this.estado = estado;
+        this.ciudad_nombre=ciudad_nombre;
     }
 
     public String getCiudad_nombre() {

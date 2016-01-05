@@ -74,8 +74,10 @@
                     <form:input path="password" class="form-control" id="password" placeholder="Clave" />
                 </div>
                 <div class="form-group">
-                    <label for="ciudad_id">Ciudad ID</label>
-                    <form:input path="ciudad_id" class="form-control" id="ciudad_id" placeholder="Ciudad" />
+                    <label for="ciudad_nombre">Ciudad ID</label>
+                    <form:input path="ciudad_nombre" class="form-control" id="ciudad_nombre" />
+                    
+                    
                 </div>
                 <div class="form-group">
                     <label for="estado">Estado</label>
