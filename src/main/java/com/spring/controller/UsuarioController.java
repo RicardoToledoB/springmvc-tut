@@ -68,13 +68,6 @@ public class UsuarioController {
     public ModelAndView edit(@ModelAttribute Usuario usuario,@PathVariable int id) {
          Usuario u=new Usuario();
          u.setUsuario_id(id);
-         u.setNombre(usuario.getNombre());
-         u.setApepat(usuario.getApepat());
-         u.setApemat(usuario.getApemat());
-         u.setUsername(usuario.getUsername());
-         u.setPassword(usuario.getPassword());
-         u.setCiudad_id(usuario.getCiudad_id());
-         u.setEstado(usuario.getEstado());
          ModelAndView modelAndView = new ModelAndView("/usuario/home");
          usuarioService.edit(u);
         return modelAndView;
