@@ -61,6 +61,7 @@
                                 <th>nombre</th>
                                 <th>apepat</th>
                                 <th>apemat</th>
+                                <th>ciudad</th>
                                 <th>estado</th>
                                 <th>acciones</th>  
                             </tr>  
@@ -72,6 +73,7 @@
                                     <td>${usuario.nombre}</td>  
                                     <td>${usuario.apepat}</td>  
                                     <td>${usuario.apemat}</td> 
+                                    <td>${usuario.ciudad_nombre}</td>
                                     <td>${usuario.estado}</td>  
                                     <td>  
                                         <a href="${pageContext.request.contextPath}/usuario/edit/${usuario.usuario_id}">Edit</a> /

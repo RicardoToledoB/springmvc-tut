@@ -18,7 +18,7 @@ public class Usuario {
     private String password;
     private int ciudad_id;
     private String estado;
-    
+    private String ciudad_nombre;
     public Usuario() {
     }
 
@@ -31,6 +31,14 @@ public class Usuario {
         this.password = password;
         this.ciudad_id = ciudad_id;
         this.estado = estado;
+    }
+
+    public String getCiudad_nombre() {
+        return ciudad_nombre;
+    }
+
+    public void setCiudad_nombre(String ciudad_nombre) {
+        this.ciudad_nombre = ciudad_nombre;
     }
 
     public String getUsername() {
